@@ -11,3 +11,5 @@
 Click on a page number or the arrows will trigger the function getOtherPageData and pass the page number
 which was clicked on the pagination bar so appropriate API call can be made based on the same to get the data
 and show the same in the view.
+
+<img src="https://github.com/hearsid/angular-typescript-mat-pagination/blob/master/demo/screenshot.png" alt="pagination image" />
