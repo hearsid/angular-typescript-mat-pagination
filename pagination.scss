@@ -1,0 +1,118 @@
+@import '../../../styles/base/_variables.scss';
+
+@function setDefaultColor($p: null) {
+  $default-color: green !default;
+  @if ($p) {
+    /* Do something if $p was passed */
+    $default-color: $p;
+  } @else {
+    /* Do something if $p was not passed */
+    $default-color: #4CAF50;
+  }
+  @return $default-color;
+}
+
+$default-color: setDefaultColor($primary-color);
+
+ul.pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  border:solid 1px #ddd;
+}
+
+ul.pagination li {display: inline;
+ }
+
+ul.pagination li a {
+  color: black;
+  float: left;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 0px;
+  font-size:14px;
+  border-right:solid 1px #ddd !important;
+}
+
+ul.pagination li a.active {
+  background-color: $default-color;
+  color: white;
+  border-radius: 5px;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+/* ==========  Select Field Variables ========== */
+$color-black: "0,0,0";
+$select-background-color: transparent;
+$select-border-color: unquote("rgba(#{$color-black}, 0.12)") !default;
+$select-font-size: 16px;
+$select-color: unquote("rgba(#{$color-black}, 0.26)") !default;
+$select-padding: 4px;
+
+/* ==========  Select Field ========== */
+
+/* Style Select Field */
+select {
+  font-family: inherit;
+  background-color: transparent;
+  padding: $select-padding 0;
+  font-size: $select-font-size;
+  color: $select-color;
+  border: 1px solid $select-border-color;
+}
+
+.pagination-container-box{
+padding-right:30px;
+padding-bottom:30px;
+select {
+  width:127px  !important;
+  margin:1px 10px 0 0  !important;
+  float:right !important;
+  font-size:14px;
+  -webkit-appearance:menulist !important;
+   hover {
+  background-color: #ccc;
+          }
+   
+     }
+}
+.pagination-container-box{
+&:hover select {
+ 
+  background-color: #ccc;
+        
+
+     }
+}
+
+/* Remove focus */
+select:focus {
+  outline: none}
+
+/* Hide label */
+.mdl-selectfield label {display: none;}
+/* Use custom arrow */
+.mdl-selectfield select {appearance: none}
+.mdl-selectfield {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 0.75em;
+    right: 0.75em;
+    /* Styling the down arrow */
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: '';
+    border-left: .25em solid transparent;
+    border-right: .25em solid transparent;
+    border-top: .375em solid $select-border-color;
+    pointer-events: none;
+  }
+}
+.pagination-container-box{
+ display: inline-flex;
+ float:right;
+}
